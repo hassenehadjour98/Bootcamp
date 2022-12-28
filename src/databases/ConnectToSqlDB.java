@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class ConnectToSqlDB {
+public class ConnectToSqlDB{
 
     public static Connection connect = null;
     public static Statement statement = null;
@@ -30,6 +30,9 @@ public class ConnectToSqlDB {
         String url = prop.getProperty("MYSQLJDBC.url");
         String userName = prop.getProperty("MYSQLJDBC.userName");
         String password = prop.getProperty("MYSQLJDBC.password");
+//        String url = "jdbc:mysql://Localhost:3306/classicmodels";
+//        String userName = "root";
+//        String password = "12345678";
         Class.forName(driverClass);
         connect = DriverManager.getConnection(url,userName,password);
         System.out.println("Database is connected");

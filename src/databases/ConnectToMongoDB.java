@@ -15,10 +15,13 @@ public class ConnectToMongoDB {
 
     public static MongoDatabase mongoDatabase = null;
 
-    public MongoDatabase connectToMongoDB() {
+   public MongoDatabase connectToMongoDB() {
         MongoClient mongoClient = new MongoClient("localhost" , 27017);
         mongoDatabase = mongoClient.getDatabase("students");
         System.out.println("Database Connected");
+//       MongoClient mongoClient = new MongoClient("localhost" , 3306);
+//       mongoDatabase = mongoClient.getDatabase("classicmodels");
+//       System.out.println("Database Connected");
 
         return mongoDatabase;
     }
@@ -68,9 +71,9 @@ public class ConnectToMongoDB {
 
     public static void main(String[] args){
 //        insertIntoToMongoDB(new User("Naomi Chan", "4493","07-1996"));
-        //List<User> user = readUserProfileFromMongoDB();
-        //for(User person:user){
-            //System.out.println(person.getStName()+ " "+ person.getStID());
-        //}
+//        List<User> user = readUserProfileFromMongoDB();
+//        for(User person:user){
+//            System.out.println(person.getStName()+ " "+ person.getStID());
+//        }
     }
 }

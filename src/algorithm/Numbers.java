@@ -2,6 +2,7 @@ package algorithm;
 
 import databases.ConnectToSqlDB;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Random;
 
@@ -11,29 +12,35 @@ public class Numbers {
 	 * Show all the different kind of sorting algorithm by applying into (num array).
 	 * Display the execution time for each sorting.Example in below.
 	 *
-	 * Use any databases[MongoDB, Oracle or MySql] to store data and retrieve data.
+	 * Use any databases[MongoDB, Oracle or databases.MySql] to store data and retrieve data.
 	 *
 	 * At the end. After running all the sorting algo, come to a conclusion which one is suitable on given data set.
 	 *
 	 */
 
 	public static void main(String[] args) throws Exception {
-		
-		int [] num = new int[1000000];
-		storeRandomNumbers(num);
+
+//		int [] num = new int[1000];
+		int [] num = {8,2,7,4,6,1};
+//		storeRandomNumbers(num);
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		//Selection Sort
 		Sort algo = new Sort();
-		algo.selectionSort(num);
+//		algo.selectionSort(num);
+		algo.bubbleSort(num);
+//		algo.insertionSort(num);
+//		algo.mergeSort(num);
+//		algo.quickSort(num);
+//		algo.heapSort(num);
+//		Sort.printSortedArray(num);
 		long selectionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
-        connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
-        List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-        printValue(numbers);
+		connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
+		List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
+		printValue(numbers);
 		int n = num.length;
 		randomize (num, n);
-		//Insertion Sort
-		algo.insertionSort(num);
+
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 

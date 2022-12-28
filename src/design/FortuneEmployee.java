@@ -10,7 +10,7 @@ public class FortuneEmployee {
 	 * more to design an application that will meet for fortune 500 Employee Information
 	 * Services.
 	 *
-	 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
+	 * Use any databases[MongoDB, Oracle, databases.MySql] to store data and retrieve data.
 	 *
 	 **/
 	public static void main(String[] args) {
