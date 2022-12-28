@@ -44,4 +44,4 @@ every time you finish a topic, you need to push your work
 
 submit your midterm github url to the link below:
 
-https://forms.gle/KYfHSc5iNW6PenGc8
+https://forms.gle/KYfHSc5iNW6PenGc8# Midterm
