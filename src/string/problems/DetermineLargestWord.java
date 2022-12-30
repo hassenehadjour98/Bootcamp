@@ -24,7 +24,7 @@ public class DetermineLargestWord {
             }
         }
         //ANSWER:
-        System.out.println(longestWord.indexOf(longestWord) +" "+ longestWord);
+        System.out.println(longestWord.length() +" "+ longestWord);
 
     }
 

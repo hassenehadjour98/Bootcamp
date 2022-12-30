@@ -9,12 +9,12 @@ import java.util.List;
 
 public class LowestNumber {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
 		/*
 		 * Write java solution to find the lowest number from this array.
 		 * Use one of the databases from mysql or mongodb to store and to retrieve.
 		 */
-		int  array[] = new int[]{211,110,99,34,67,89,67,456,321,456,78,90,45,32,56,78,90,54,32,123,67,5,679,54,32,65};
+		int array[] = new int[]{211, 110, 99, 34, 67, 89, 67, 456, 321, 456, 78, 90, 45, 32, 56, 78, 90, 54, 32, 123, 67, 5, 679, 54, 32, 65};
 
 		//find lowest number from the array
 		int lowest = array[0];
@@ -26,26 +26,18 @@ public class LowestNumber {
 		System.out.println("Lowest number: " + lowest);
 
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-		String url = "jdbc:mysql://Localhost:3306/classicmodels";
-		String userName = "root";
-		String password = "12345678";
-		connectToSqlDB = (ConnectToSqlDB) DriverManager.getConnection(url,userName,password);
-
 		List<String> lowestValue = new ArrayList<String>();
 		try {
-			connectToSqlDB.insertDataFromArrayToSqlTable(array, "tbl_lowestNumber", "column_lowestNumber");
-			lowestValue = connectToSqlDB.readDataBase("tbl_lowestNumber", "column_lowestNumber");
+			connectToSqlDB.insertDataFromArrayToSqlTable(array, "tbl_lowestNumber", "SortingNumbers");
+			lowestValue = connectToSqlDB.readDataBase("tbl_lowestNumber", "SortingNumbers");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		System.out.println("Data is reading from the Table (tbl_primenumber) and displaying to the console");
-		for(String st:lowestValue){
+		for (String st : lowestValue) {
 			System.out.println(st);
 		}
-
-
 	}
 
 }
