@@ -17,6 +17,7 @@ public static void main(String[] args) {
         map.put(4, "Boston");
         map.put(5, "San Jose");
         map.put(6, "Seattle");
+        map.put(7,"A  ");
 
     System.out.println("The collection view of values of map is: " + map.values());
 
